@@ -1,13 +1,17 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { BrowserRouter } from 'react-router-dom'
 import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
+import Firebase, { FirebaseContext } from './components/firebase';
 
 ReactDOM.render(
-  <React.StrictMode>
+  <BrowserRouter>
+  <FirebaseContext.Provider value={new Firebase()}>
     <App />
-  </React.StrictMode>,
+  </FirebaseContext.Provider>
+  </BrowserRouter>,
   document.getElementById('root')
 );
 
