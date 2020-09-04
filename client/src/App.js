@@ -9,9 +9,8 @@ import axios from 'axios'
 import signUp from './components/pages/signUp'
 import logIn from './components/SignIn/index'
 import * as ROUTES from './constants/routes'
-import Firebase, {withFirebase} from './components/firebase'
+import {withFirebase} from './components/firebase'
 import { AuthUserContext } from './components/session'
-import { app } from 'firebase';
 import {v4 as uuidv4} from 'uuid'
 
 
@@ -88,7 +87,8 @@ class App extends Component {
           </React.Fragment>
         )}/>
         <Route path='/about' component = {About}/>
-        <Route exact path={ROUTES.LANDING} component = {signUp}/>
+        <Route exact path={ROUTES.LANDING} component = {logIn}/> 
+        <Route path = {ROUTES.SIGN_UP} component = {signUp}/>
         <Route path={ROUTES.SIGN_IN} component = {logIn}/>
       
       </div>

@@ -22,6 +22,16 @@ export class AddTodo extends Component {
             <form onSubmit={this.onSubmit} style={{display:'flex'}}>
                 <input type="text" name="title" placeholder="Add Todo" style={{flex: '10', padding: '10px'}} 
                 value={this.state.title} onChange={this.onChange}/>
+                <select name="tags"> 
+                    <option value="volvo"></option>
+                    <option value="volvo">Volvo</option>
+                    <option value="volvo">Volvo</option>   
+                    <option value="volvo">Volvo</option>
+                    <option value="volvo">Volvo</option>
+                    <option value="volvo">Volvo</option>
+                    <option value="volvo">Volvo</option>
+                    <option value="volvo">Volvo</option>
+                </select>
                 <input  type="submit" value="submit" className="btn" style={{flex: '1'}} />
 
             </form>

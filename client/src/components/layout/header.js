@@ -16,7 +16,7 @@ function HeaderAuth() {
     return (
     <header style={headerStyle}>
         <h1> Todo List </h1>
-        <Link style={linkStyle} to='/mylist'>Home</Link> | <Link style={linkStyle} to='/about'>About</Link> | 
+        <Link style={linkStyle} to='/mylist'>My To-dos</Link> | <Link style={linkStyle} to='/about'>About</Link> | 
         <SignOutButton />
     </header>
     )
@@ -26,7 +26,7 @@ function HeaderNonAuth() {
     return (
     <header style={headerStyle}>
         <h1> Todo List </h1>
-        <Link style={linkStyle} to='/mylist'>Home</Link> | <Link style={linkStyle} to='/about'>About</Link> | <Link style={linkStyle} to='/'>Sign Up</Link>| <Link style={linkStyle} to='/signin'>Log In</Link> 
+        <Link style={linkStyle} to='/mylist'>My To-Dos</Link> | <Link style={linkStyle} to='/about'>About</Link> | <Link style={linkStyle} to='/signin'>Log In</Link> 
     </header>
     )
 }
