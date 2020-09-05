@@ -5,8 +5,8 @@ export default function about() {
         <React.Fragment>
             <h1>About</h1>
             <p>This is the todo list app.</p>
-            
+
         </React.Fragment>
-            
+
     )
 }
