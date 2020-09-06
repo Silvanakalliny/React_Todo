@@ -22,16 +22,17 @@ class MyList extends Component {
 
   markComplete = (id) => {
     let docRef = this.props.firebase.db.collection(this.props.authUser.uid).doc('todos')
-    docRef.update()
-    this.setState({
+    docRef.update({
       todos: this.state.todos.map(todo => {
         if (todo.id === id) {
           todo.completed = !todo.completed
-
         }
         return todo
       })
     })
+    docRef.get()
+        .then(doc => this.setState({ todos: doc.data().todos }))
+    
   }
 
   delTodo = (id) => {
