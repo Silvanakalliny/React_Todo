@@ -32,10 +32,7 @@ export class AddTodo extends Component {
         )
     }
 }
-const dropdownStyle = {
-    width: '200%',
 
-}
 AddTodo.propTypes = {
     addTodo: PropTypes.func.isRequired,
     

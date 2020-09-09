@@ -7,7 +7,6 @@ import logIn from './components/SignIn/index'
 import * as ROUTES from './constants/routes'
 import { withFirebase } from './components/firebase'
 import { AuthUserContext } from './components/session'
-import MyList from './components/pages/myList'
 import about from './components/pages/about';
 import home from './components/pages/home'
 
