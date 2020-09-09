@@ -3,7 +3,6 @@ import { withAuthorization } from '../session';
 import { Component } from 'react';
 import Todos from '..//Todo'
 import AddTodo from '../AddTodo'
-import axios from 'axios'
 import { v4 as uuidv4 } from 'uuid'
 
 
@@ -36,8 +35,12 @@ class MyList extends Component {
   }
 
   delTodo = (id) => {
-    axios.delete(`https://jsonplaceholder.typicode.com/todos/${id}`)
-      .then(res => this.setState({ todos: this.state.todos.filter(todo => todo.id !== id) }))
+    let docRef = this.props.firebase.db.collection(this.props.authUser.uid).doc('todos')
+    docRef.update({
+      todos : this.state.todos.filter(todo => todo.id !== id)
+    })
+    docRef.get()
+      .then(doc => this.setState({ todos: doc.data().todos }))
 
   }
 

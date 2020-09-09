@@ -1,12 +1,18 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
+import $ from 'jquery'
+
+
 
 export class AddTodo extends Component {
     state =  {
-        title: ''
-
+        title: '',
+        tags: []
     }
-
+    
+    componentDidMount() {
+    }
+    
     onChange = (e) => {
         this.setState({title: e.target.value})
     }
@@ -20,25 +26,18 @@ export class AddTodo extends Component {
     render() {
         return (
             <form onSubmit={this.onSubmit} style={{display:'flex'}}>
-                <input type="text" name="title" placeholder="Add Todo" style={{flex: '10', padding: '10px'}} 
+                <input type="text" name="title" placeholder="Add Todo" style={{flex: '7', padding: '10px'}} 
                 value={this.state.title} onChange={this.onChange}/>
-                <select name="tags"> 
-                    <option value="volvo"></option>
-                    <option value="volvo">Volvo</option>
-                    <option value="volvo">Volvo</option>   
-                    <option value="volvo">Volvo</option>
-                    <option value="volvo">Volvo</option>
-                    <option value="volvo">Volvo</option>
-                    <option value="volvo">Volvo</option>
-                    <option value="volvo">Volvo</option>
-                </select>
                 <input  type="submit" value="submit" className="btn" style={{flex: '1'}} />
 
             </form>
         )
     }
 }
+const dropdownStyle = {
+    width: '200%',
 
+}
 AddTodo.propTypes = {
     addTodo: PropTypes.func.isRequired,
     

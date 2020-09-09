@@ -39,8 +39,7 @@ class App extends Component {
           <div className='container'>
             <div className="App">
               <Header />
-              <Route path={ROUTES.MYLIST} component={props => (
-                <MyList authUser={this.state.authUser} />)} />
+              
               <Route path={ROUTES.ABOUT} component={about} />
               <Route path={ROUTES.SIGN_IN} component={logIn} />
               <Route path={ROUTES.SIGN_UP} component={signUp} />
